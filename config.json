@@ -1,0 +1,7 @@
+{
+    "RegistryAddress":"192.168.182.141",
+    "RegistryDomain":"myregistry.com",
+    "Project":"public",
+    "Service":"logmaker",
+    "Version":"v3"
+}
