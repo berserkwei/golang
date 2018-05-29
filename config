@@ -1,0 +1,2 @@
+export PROJECT=public
+export IMAGE=logmaker
