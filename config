@@ -2,3 +2,4 @@ export REGISTRY_ADDRESS=192.168.182.141
 export REGISTRY_DOMAIN=myregistry.com
 export PROJECT=public
 export IMAGE=logmaker
+export VERSION=v3
