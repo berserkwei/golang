@@ -1,0 +1,50 @@
+﻿apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: logmaker
+spec:
+  replicas: 1 # We want two pods for this deployment
+  template:
+    metadata:
+      labels:
+        app: logmaker
+    spec:
+      containers:
+      - name: logmaker
+      #- name: busybox
+        resources:
+          requests:
+            cpu: 2000m
+          limits:
+            cpu: 4000m
+        image: myregistry.com/public/logmaker:v2
+#        args: ["sleep","655360"]
+        ports:
+        - containerPort: 80
+        volumeMounts:
+#        - name: nfs-volume
+#          mountPath: /nfs
+        - name: localtime
+          mountPath: /etc/localtime
+      volumes:
+#      - nfs:
+#          server: 192.168.229.143
+#          path: /var/jenkins
+#        name: nfs-volume
+      - hostPath:
+          path: /etc/localtime
+        name: localtime
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: logmaker
+  labels:
+    app: logmaker
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: logmaker
