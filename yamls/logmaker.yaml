@@ -1,7 +1,7 @@
 ﻿apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: logmaker
+  name: %name%-%version%
 spec:
   replicas: 1 # We want two pods for this deployment
   template:
@@ -17,7 +17,7 @@ spec:
             cpu: 2000m
           limits:
             cpu: 4000m
-        image: myregistry.com/public/logmaker:v2
+        image: %image%
 #        args: ["sleep","655360"]
         ports:
         - containerPort: 80
