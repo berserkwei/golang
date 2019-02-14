@@ -3,5 +3,6 @@
     "RegistryDomain":"myregistry.com",
     "Project":"public",
     "Service":"logmaker",
-    "Version":"v3"
+    "Version":"v3",
+    "AutoDeploy":true
 }
