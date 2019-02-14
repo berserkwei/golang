@@ -4,5 +4,5 @@
     "Project":"public",
     "Service":"logmaker",
     "Version":"v3",
-    "AutoDeploy":true
+    "AutoDeploy":false
 }
